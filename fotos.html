@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foto's - Talententuin</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .gallery { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 20px; }
+    .gallery img { width: 220px; height: 150px; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 8px rgba(60, 80, 60, 0.07); }
+  </style>
+</head>
+<body>
+  <header class="impact-header">
+    <div class="header-inner">
+      <div class="logo-title">
+        <img src="Simple_tree.jpg" alt="Logo Talententuin" class="logo-img">
+        <h1>Talententuin</h1>
+      </div>
+      <nav>
+        <ul class="impact-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="over.html">Over de kampen</a></li>
+          <li><a href="data-locaties.html">Data & Locaties</a></li>
+          <li><a href="fotos.html">Foto's</a></li>
+          <li><a href="inschrijven.html">Inschrijven</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Menu"><i class="fa fa-bars"></i></button>
+    </div>
+  </header>
+  <main>
+    <section class="intro">
+      <h2>Sfeerfoto’s</h2>
+      <p>Bekijk hier enkele sfeerbeelden van onze vorige kampen. (Je kan deze foto's later makkelijk vervangen of aanvullen.)</p>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Kinderen in het bos">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Kampvuur">
+        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400&q=80" alt="Groep kinderen natuur">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=400&q=80" alt="Creatieve workshop">
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Talententuin Zomerkampen</p>
+  </footer>
+  <script src="menu.js"></script>
+</body>
+</html> 
