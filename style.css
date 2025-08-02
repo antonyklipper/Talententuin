@@ -63,7 +63,7 @@ footer {
 /* Navigatie en header */
 .impact-header {
   background: #eafbe7;
-  padding: 0 0 35px 0;
+  padding: 0 0 15px 0;
   text-align: center;
   border-bottom: 2px solid #6bbf59;
   max-width: 100vw;
@@ -477,7 +477,7 @@ footer {
 @media (max-width: 900px) {
   .menu-toggle {
     display: block;
-    right: 20px;
+    right: 28px;
     top: 20px;
     font-size: 1.8em;
     z-index: 1004;
@@ -622,12 +622,18 @@ footer {
   .impact-header {
     padding-left: 16px;
     z-index: 1003;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
+  }
+  .header-inner {
+    justify-content: center;
+    padding-right: 0;
   }
   .logo-title {
     padding-left: 16px;
-    padding-top: 10px;
+    padding-top: 28px;
     padding-bottom: 4px;
+    margin: 0 auto;
+    justify-content: center;
   }
   .left-align-hero {
     padding-left: 16px;
@@ -676,12 +682,20 @@ footer {
 @media (max-width: 600px) {
   .impact-header {
     padding-left: 6px;
-    padding-bottom: 35px;
+    padding-bottom: 15px;
+  }
+  .header-inner {
+    justify-content: center;
+    padding-right: 0;
+    width: 100%;
   }
   .logo-title {
     padding-left: 6px;
-    padding-top: 4px;
+    padding-top: 22px;
     padding-bottom: 2px;
+    margin: 0 auto;
+    justify-content: center;
+    padding-left: 0;
   }
   .left-align-hero {
     padding-left: 6px;
