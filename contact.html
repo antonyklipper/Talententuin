@@ -41,13 +41,17 @@
   <main>
     <section class="intro">
       <h2>Contact</h2>
-      <form action="mailto:jouremail@voorbeeld.com" method="POST" enctype="text/plain">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </p>
         <label for="naam">Naam</label>
-        <input type="text" id="naam" name="Naam" required>
+        <input type="text" id="naam" name="naam" required>
         <label for="email">E-mailadres</label>
-        <input type="email" id="email" name="E-mailadres" required>
+        <input type="email" id="email" name="email" required>
         <label for="bericht">Bericht</label>
-        <textarea id="bericht" name="Bericht" rows="4" required></textarea>
+        <textarea id="bericht" name="bericht" rows="4" required></textarea>
         <button type="submit">Verstuur</button>
       </form>
       <div class="contactinfo">

@@ -40,26 +40,30 @@
   <main>
     <section class="intro">
       <h2>Inschrijfformulier</h2>
-      <form action="mailto:jouremail@voorbeeld.com" method="POST" enctype="text/plain">
+      <form name="inschrijving" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="inschrijving" />
+        <p class="hidden">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </p>
         <label for="oudernaam">Naam ouder(s)</label>
-        <input type="text" id="oudernaam" name="Naam ouder(s)" required>
+        <input type="text" id="oudernaam" name="oudernaam" required>
         <label for="email">E-mailadres</label>
-        <input type="email" id="email" name="E-mailadres" required>
+        <input type="email" id="email" name="email" required>
         <label for="telefoon">Telefoonnummer</label>
-        <input type="tel" id="telefoon" name="Telefoonnummer" required>
+        <input type="tel" id="telefoon" name="telefoon" required>
         <label for="kindnaam">Naam kind(eren)</label>
-        <input type="text" id="kindnaam" name="Naam kind(eren)" required>
+        <input type="text" id="kindnaam" name="kindnaam" required>
         <label for="leeftijd">Leeftijd kind(eren)</label>
-        <input type="text" id="leeftijd" name="Leeftijd kind(eren)" required>
+        <input type="text" id="leeftijd" name="leeftijd" required>
         <label for="kamp">Kamp (datum & locatie)</label>
-        <select id="kamp" name="Kamp" required>
+        <select id="kamp" name="kamp" required>
           <option value="">Maak een keuze</option>
-          <option>8 - 12 juli 2024, Boshoeve, Groendorp</option>
-          <option>15 - 19 juli 2024, Heideveld, Natuurstad</option>
-          <option>22 - 26 juli 2024, Boshoeve, Groendorp</option>
+          <option value="8-12 juli 2024, Boshoeve, Groendorp">8 - 12 juli 2024, Boshoeve, Groendorp</option>
+          <option value="15-19 juli 2024, Heideveld, Natuurstad">15 - 19 juli 2024, Heideveld, Natuurstad</option>
+          <option value="22-26 juli 2024, Boshoeve, Groendorp">22 - 26 juli 2024, Boshoeve, Groendorp</option>
         </select>
         <label for="opmerkingen">Opmerkingen / bijzonderheden</label>
-        <textarea id="opmerkingen" name="Opmerkingen" rows="3"></textarea>
+        <textarea id="opmerkingen" name="opmerkingen" rows="3"></textarea>
         <button type="submit">Inschrijven</button>
       </form>
       <p style="margin-top:16px;font-size:0.95em;color:#3b5d3b;">Na het verzenden nemen we zo snel mogelijk contact met je op.</p>
