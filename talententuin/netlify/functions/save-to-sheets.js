@@ -8,7 +8,16 @@ exports.handler = async function(event, context) {
   }
 
   try {
-    const formData = JSON.parse(event.body);
+    // Body parsen: ondersteunt zowel JSON als application/x-www-form-urlencoded
+    let formData;
+    const contentType = (event.headers && (event.headers['content-type'] || event.headers['Content-Type'])) || '';
+    if (contentType.includes('application/json')) {
+      formData = JSON.parse(event.body || '{}');
+    } else {
+      // Default HTML forms posten als x-www-form-urlencoded
+      const params = new URLSearchParams(event.body || '');
+      formData = Object.fromEntries(params.entries());
+    }
     
     // Google Sheets authenticatie
     const serviceAccountAuth = new JWT({
@@ -22,14 +31,9 @@ exports.handler = async function(event, context) {
     await doc.loadInfo();
     
     // Werkblad selecteren (of aanmaken als het niet bestaat)
-    let sheet;
-    try {
-      sheet = doc.sheetsByTitle['Inschrijvingen'];
-    } catch (error) {
-      // Werkblad aanmaken als het niet bestaat
+    let sheet = doc.sheetsByTitle['Inschrijvingen'];
+    if (!sheet) {
       sheet = await doc.addSheet({ title: 'Inschrijvingen' });
-      
-      // Headers toevoegen
       await sheet.setHeaderRow([
         'Datum Inschrijving',
         'Naam Ouder(s)',
@@ -60,7 +64,7 @@ exports.handler = async function(event, context) {
     if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
       const nodemailer = require('nodemailer');
       
-      const transporter = nodemailer.createTransporter({
+      const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
           user: process.env.EMAIL_USER,
