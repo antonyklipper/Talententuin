@@ -1,0 +1,19 @@
+{
+  "name": "talententuin-website",
+  "version": "1.0.0",
+  "description": "Website voor Talententuin zomerkampen",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'No build step required'",
+    "dev": "echo 'Use Netlify Dev for local development'"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.7",
+    "google-spreadsheet": "^4.1.2",
+    "google-auth-library": "^9.4.0"
+  },
+  "devDependencies": {},
+  "keywords": ["zomerkampen", "kinderen", "talentontwikkeling"],
+  "author": "Talententuin",
+  "license": "MIT"
+} 
